@@ -1,8 +1,7 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:myapp/widget/button_widget.dart';
 
 class StartPage extends StatelessWidget {
   const StartPage({super.key});
@@ -14,9 +13,9 @@ class StartPage extends StatelessWidget {
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 20.w),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              const Spacer(),
               Container(
                 height: 134.h,
                 width: 134.w,
@@ -25,9 +24,10 @@ class StartPage extends StatelessWidget {
                   shape: BoxShape.circle,
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.black.withOpacity(0.1),
-                      blurRadius: 10,
-                      spreadRadius: 2,
+                      color: Colors.black.withOpacity(0.16),
+                      offset: Offset(0, 3),
+                      blurRadius: 8,
+                      spreadRadius: 0,
                     ),
                   ],
                 ),
@@ -56,26 +56,12 @@ class StartPage extends StatelessWidget {
                   color: Colors.black54,
                 ),
               ),
-              SizedBox(height: 40.h),
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.blue,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 90.w,
-                    vertical: 20.h,
-                  ),
-                ),
-                onPressed: () {},
-                child: Text(
-                  "Let's get started",
-                  style: TextStyle(
-                    fontSize: 22.sp,
-                    color: Colors.white,
-                  ),
-                ),
+              const Spacer(),
+              CustomButton(
+                text: "Let's get started",
+                onPressed: () {
+            
+                },
               ),
               SizedBox(height: 20.h),
               GestureDetector(
@@ -98,7 +84,8 @@ class StartPage extends StatelessWidget {
                     ),
                   ],
                 ),
-              )
+              ),
+              SizedBox(height: 40.h),
             ],
           ),
         ),
